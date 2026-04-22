@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014, 2025, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2014, 2026, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -187,17 +187,6 @@ public final class ImageReader implements AutoCloseable {
     public byte[] getResource(Node node) throws IOException {
         ensureOpen();
         return reader.getResource(node);
-    }
-
-    /**
-     * Releases a (possibly cached) {@link ByteBuffer} obtained via
-     * {@link #getResourceBuffer(Node)}.
-     *
-     * <p>Note that no testing is performed to check whether the buffer about
-     * to be released actually came from a call to {@code getResourceBuffer()}.
-     */
-    public static void releaseByteBuffer(ByteBuffer buffer) {
-        BasicImageReader.releaseByteBuffer(buffer);
     }
 
     /**
